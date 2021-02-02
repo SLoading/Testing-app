@@ -1,10 +1,12 @@
 import {combineReducers} from 'redux';
-import ClockReducer from './Clock';
+import TimezoneRight from './TimezoneRight';
+import TimezoneLeft from "./TimezoneLeft";
 
 
 
 const allReducers = combineReducers({
-    clock: ClockReducer,
+    timezoneRight: TimezoneRight,
+    timezoneLeft: TimezoneLeft
 });
 
 export default allReducers

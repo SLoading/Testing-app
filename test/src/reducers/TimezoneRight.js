@@ -1,14 +1,15 @@
 import React from 'react'
 
   const initialState = {
-    timezone: 'GMT+07:00',
+    timezone_right: 'europe/Moscow',
   }
 
 
 const clockReducer = (state = initialState, action) => {
+  console.log(action.timezone_right)
   switch(action.type){
-    case 'TIMEZONE':
-        return {timezone:action.timezone};
+    case 'RIGHT':
+        return {timezone_right: action.timezone_right};
 
     default:
       return state;

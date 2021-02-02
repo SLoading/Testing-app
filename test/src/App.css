@@ -1,20 +1,5 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color: #111111;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +9,197 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.left_watch{
+    margin: 30px;
+}
+.right_watch{
+    margin: 30px;
+}
+.circle{
+    text-align: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background: #2e2e2e;
+    border-radius: 200px;
+    border: 2px solid #fafafa;
+    position: relative;
+}
+.c12{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:2px;
+    margin: 1px 14px 0 0;
+    transform-origin: 100% 50%;
+    padding: 4px 0 4px 3%;
+    background: #fafafa;
+    left: 49%;
+}
+.c1{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:4px;
+    margin: 15px 14px 0 0;
+    transform-origin: 100% 50%;
+    padding: 4px 0 4px 3%;
+    background: #fafafa;
+    left: 73%;
+}
+.c2{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:4px;
+    margin: 45px 14px 0 0;
+    transform-origin: 100% 50%;
+    padding: 4px 0 4px 3%;
+    background: #fafafa;
+    left: 88%;
+}
+.c3{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:4px;
+    margin: 93px 14px 0 0;
+    transform-origin: 100% 50%;
+    padding: 4px 0 4px 3%;
+    background: #fafafa;
+    left: 94%;
+}
+.c4{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:4px;
+    margin: 140px 14px 0 0;
+    transform-origin: 100% 50%;
+    padding: 4px 0 4px 3%;
+    background: #fafafa;
+    left: 86%;
+}
+.c5{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:4px;
+    margin: 170px 14px 0 0;
+    transform-origin: 100% 50%;
+    padding: 4px 0 4px 3%;
+    background: #fafafa;
+    left: 70%;
+}
+.c6{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:2px;
+    margin: 185px 14px 0 0;
+    transform-origin: 100% 50%;
+    padding: 4px 0 4px 3%;
+    background: #fafafa;
+    left: 49%;
+}
+.c7{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:4px;
+    margin: 170px 14px 0 0;
+    transform-origin: 100% 50%;
+    padding: 4px 0 4px 3%;
+    background: #fafafa;
+    left: 26%;
+}
+.c8{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:4px;
+    margin: 140px 14px 0 0;
+    transform-origin: 100% 50%;
+    padding: 4px 0 4px 3%;
+    background: #fafafa;
+    left: 10%;
+}
+.c9{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:4px;
+    margin: 93px 14px 0 0;
+    transform-origin: 100% 50%;
+    padding: 4px 0 4px 3%;
+    background: #fafafa;
+    left: 2%;
+}
+.c10{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:4px;
+    margin: 48px 14px 0 0;
+    transform-origin: 100% 50%;
+    padding: 4px 0 4px 3%;
+    background: #fafafa;
+    left: 8%;
+}
+.c11{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:4px;
+    margin: 10px 14px 0 0;
+    transform-origin: 100% 50%;
+    padding: 4px 0 4px 3%;
+    background: #fafafa;
+    left: 26%;
+}
+#hour{
+    width: 0;
+    height: 0;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin: -20% -3px 0;
+    padding: 20% 3px 0;
+    background: #fafafa;
+    transform-origin: 50% 100%;
+    border-radius: 3px 3px 0 0;
+}
+#minute{
+    width: 0;
+    height: 0;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin: -40% -3px 0;
+    padding: 40% 3px 0;
+    background: #fafafa;
+    transform-origin: 50% 100%;
+    border-radius: 3px 3px 0 0;
+}
+#second{
+    width: 0;
+    height: 0;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin: -40% -1px 0;
+    padding: 40% 1px 0;
+    background: #C21F39;
+    transform-origin: 50% 100%;
+}
+.app_clock{
+    text-align: center;
+}
+form{
+    text-align: center;
 }

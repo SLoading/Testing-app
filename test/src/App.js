@@ -1,28 +1,25 @@
 import './App.css';
 import React,{useState,useEffect} from 'react';
+import { useSelector,useDispatch } from "react-redux";
 import Moment from 'react-moment';
 import moment from 'moment';
+import Clock from './Clock';
 
 function App() {
-  const [timeLeft,setTimeLeft] = useState(new Date().getHours()+":"+new Date().getMinutes()+":"+new Date().getSeconds());
-  const [timeRight,setTimeRight] = useState(new Date().getHours()-4+":"+new Date().getMinutes()+":"+new Date().getSeconds());
-  const [left_watch,setLeft_watch] = useState('Krasnoyarsk');
+  const [timeLeft,setTimeLeft] = useState(moment().utcOffset('GMT+07:00').format("hh:mm:ss"));
+  const [left_watch,setLeft_watch] = useState('GMT+07:00');
   const [right_watch,setRight_watch] = useState('Moscow');
-  const [sec,setSec] = useState(new Date().getSeconds())
-  const [minute,setMinute] = useState(new Date().getMinutes());
-  const [hour,setHour] = useState(new Date().getHours())
+  const watch = useSelector((state)=>state);
+  const dispatch = useDispatch();
 
-    setInterval(() => {
-        setTimeLeft(moment().format("hh:mm:ss"))
-        document.querySelector('#second').style.transform = 'rotate('+360/60*new Date().getSeconds()+'deg)'
-        if(new Date().getSeconds() == 0){
-        document.querySelector('#minute').style.transform = 'rotate('+360/60*new Date().getMinutes()+'deg)'
-        document.querySelector('#hour').style.transform = 'rotate('+360/12*new Date().getHours()+'deg)'}
-        if(new Date().getMinutes() == 0){
-        document.querySelector('#hour').style.transform = 'rotate('+360/12*new Date().getHours()+'deg)'}
-        }, 1000);
+  let left_interval =   setTimeout(() => {
+            setTimeLeft(moment().utcOffset(left_watch).format("hh:mm:ss"))
+       }
+       , 1000);
+
   const left = (e) => {
       setLeft_watch(e.target.value)
+      dispatch({type:"TIMEZONE","timezone":e.target.value})
   }
 
   const right = (e) => {
@@ -33,30 +30,14 @@ function App() {
       <header className="App-header">
           <div className="container">
               <div className="left_watch">
-                  <div className="circle">
-                      <div className="c12"></div>
-                      <div className="c11"></div>
-                      <div className="c10"></div>
-                      <div className="c9"></div>
-                      <div className="c8"></div>
-                      <div className="c7"></div>
-                      <div className="c6"></div>
-                      <div className="c5"></div>
-                      <div className="c4"></div>
-                      <div className="c3"></div>
-                      <div className="c2"></div>
-                      <div className="c1"></div>
-                      <div id="hour"></div>
-                      <div id="minute"></div>
-                      <div id="second"></div>
-                  </div>
+                  <Clock/>
                   <p className="app_clock">{timeLeft}</p>
                   <form className="form_left">
-                      <select value={left_watch} onChange={left}>
-                          <option value={"Kaliningrad"}>Калининград</option>
-                          <option value={"Vladivostok"}>Владивосток</option>
-                          <option value={"Krasnoyarsk"}>Красноярск</option>
-                          <option value={"Moscow"}>Москва</option>
+                      <select value={left_watch} onChange={(e)=>left(e)}>
+                          <option value={"GMT+02:00"}>Калининград</option>
+                          <option value={"GMT+10:00"}>Владивосток</option>
+                          <option value={"GMT+07:00"}>Красноярск</option>
+                          <option value={"GMT+03:00"}>Москва</option>
                       </select>
                   </form>
               </div>
@@ -77,7 +58,6 @@ function App() {
               {/*    </form>*/}
               {/*</div>*/}
           </div>
-
       </header>
     </div>
   );
